@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website title -->
+    <title>FoodieHub | Restaurant Website</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="header">
+        <nav class="navbar container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <i class="fa-solid fa-utensils"></i> FoodieHub
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="#booking">Book Table</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="nav-actions">
+                <a href="#menu" class="btn btn-primary">Order Now</a>
+                <a href="cart.html" class="cart-icon">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount">0</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+        <!-- Dark overlay for readability -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container" data-aos="fade-up">
+            <p class="hero-subtitle">Welcome to FoodieHub</p>
+            <h1>Delicious Food Delivered Fresh</h1>
+            <p>
+                Experience premium dining with fresh ingredients, expert chefs,
+                and unforgettable flavors.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Order Now</a>
+                <a href="#booking" class="btn btn-outline">Book Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about section" id="about">
+        <div class="container about-content">
+
+            <!-- Left Side Image -->
+            <div class="about-image" data-aos="fade-right">
+                <img src="images/aboutUs.jpeg" alt="Restaurant Interior">
+            </div>
+
+            <!-- Right Side Text -->
+            <div class="about-text" data-aos="fade-left">
+                <p class="section-subtitle">About Us</p>
+                <h2>We Serve Quality Food Since 2010</h2>
+                <p>
+                    FoodieHub offers a premium dining experience with fresh
+                    ingredients, expert chefs, and exceptional service.
+                </p>
+
+                <div class="features">
+                    <div class="feature">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Fresh Ingredients</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-truck"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fa-solid fa-user-chef"></i>
+                        <span>Expert Chefs</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= MENU SECTION ================= -->
+    <section class="menu section" id="menu">
+        <div class="container">
+            <p class="section-subtitle">Our Menu</p>
+            <h2 class="section-title">Popular Dishes</h2>
+
+            <div class="menu-grid">
+
+                <!-- Pizza Card -->
+                <div class="menu-card" data-aos="zoom-in">
+                    <img src="images/pizza.jpg" alt="Pizza">
+
+                    <div class="menu-card-content">
+                        <h3>Margherita Pizza</h3>
+                        <p>Classic cheese pizza with fresh basil.</p>
+
+                        <div class="menu-footer">
+                            <span>₹299</span>
+                            <button class="btn btn-small add-to-cart" data-name="Margherita Pizza" data-price="299">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burger Card -->
+                <div class="menu-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/burger.jpg" alt="Burger">
+
+                    <div class="menu-card-content">
+                        <h3>Cheese Burger</h3>
+                        <p>Juicy burger with cheddar cheese.</p>
+
+                        <div class="menu-footer">
+                            <span>₹249</span>
+                            <button class="btn btn-small add-to-cart" data-name="Cheese Burger" data-price="249">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasta Card -->
+                <div class="menu-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/pasta.jpg" alt="Pasta">
+
+                    <div class="menu-card-content">
+                        <h3>Creamy Pasta</h3>
+                        <p>Italian pasta in rich white sauce.</p>
+
+                        <div class="menu-footer">
+                            <span>₹349</span>
+                            <button class="btn btn-small add-to-cart" data-name="Cheese Burger" data-price="249">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SPECIAL OFFER SECTION ================= -->
+    <section class="specials section" id="specials">
+        <div class="container specials-box" data-aos="fade-up">
+            <h2>Get 20% Off On Your First Order</h2>
+            <p>Use code <strong>WELCOME20</strong> at checkout.</p>
+            <a href="#menu" class="btn btn-primary">Order Now</a>
+        </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="why-us section">
+        <div class="container">
+            <p class="section-subtitle">Why Choose Us</p>
+            <h2 class="section-title">We Deliver More Than Just Food</h2>
+
+            <div class="why-grid">
+
+                <div class="why-card" data-aos="fade-up">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Fresh Ingredients</h3>
+                    <p>We use only fresh and high-quality ingredients.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable delivery to your doorstep.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-user-chef"></i>
+                    <h3>Expert Chefs</h3>
+                    <p>Prepared by experienced and passionate chefs.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                    <h3>Cozy Ambience</h3>
+                    <p>Enjoy a warm and comfortable dining experience.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= BOOKING SECTION ================= -->
+    <section class="booking section" id="booking">
+        <div class="container">
+            <p class="section-subtitle">Reservation</p>
+            <h2 class="section-title">Book Your Table</h2>
+
+            <form class="booking-form" id="bookingForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="date" required>
+                <input type="time" required>
+                <input type="number" placeholder="Number of Guests" min="1" required>
+
+                <button type="submit" class="btn btn-primary">
+                    Book Now
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- ================= TESTIMONIALS SECTION ================= -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <p class="section-subtitle">Testimonials</p>
+            <h2 class="section-title">What Our Customers Say</h2>
+
+            <div class="testimonial-card" data-aos="fade-up">
+                <p>
+                    "Amazing food and excellent service. One of the best restaurants in Pune!"
+                </p>
+                <h4>- Rahul Sharma</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="contact section" id="contact">
+        <div class="container contact-content">
+
+            <!-- Contact Info -->
+            <div class="contact-info" data-aos="fade-right">
+                <p class="section-subtitle">Contact Us</p>
+                <h2 class="section-title">Get In Touch</h2>
+
+                <p><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</p>
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fa-solid fa-envelope"></i> info@foodiehub.com</p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm" data-aos="fade-left">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 FoodieHub. All Rights Reserved.</p>
+
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <!-- Toast Notification Container -->
+<div id="toast" class="toast"></div>
+</body>
+
+</html>

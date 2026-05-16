@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | FoodieHub</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <section class="cart-page section">
+        <div class="container">
+            <p class="section-subtitle">Your Cart</p>
+            <h2 class="section-title">Selected Items</h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-summary">
+                <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+                <button id="clearCart" class="btn btn-outline">
+                    Clear Cart
+                </button>
+
+                <a href="checkout.html" class="btn btn-primary">
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/cart.js"></script>
+    <!-- Toast Notification Container -->
+<div id="toast" class="toast"></div>
+</body>
+</html>
