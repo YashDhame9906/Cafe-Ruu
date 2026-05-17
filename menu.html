@@ -1,11 +1,22 @@
 <!DOCTYPE html>
             <h2 class="section-title">Popular Categories</h2>
             <link rel="stylesheet" href="css/style.css">
+               <button class="filter-btn" data-filter="burger">Burger</button>
+        <button class="filter-btn" data-filter="pasta">Pasta</button>
+    <!-- Search & Filter Bar -->
+<div class="menu-controls">
+    <input type="text" id="searchInput" placeholder="Search food...">
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pizza">Pizza</button>
+     </div>
+</div>
 
             <div class="menu-grid">
 
                 <!-- Pizza -->
-                <div class="menu-card">
+                <div class="menu-card" data-category="pizza">
                     <img src="images/pizza.jpg" alt="Pizza">
                     <div class="menu-card-content">
                         <h3>Margherita Pizza</h3>
@@ -23,7 +34,7 @@
                 </div>
 
                 <!-- Burger -->
-                <div class="menu-card">
+                <div class="menu-card" data-category="burger">
                     <img src="images/burger.jpg" alt="Burger">
                     <div class="menu-card-content">
                         <h3>Cheese Burger</h3>
@@ -41,7 +52,7 @@
                 </div>
 
                 <!-- Pasta -->
-                <div class="menu-card">
+                <div class="menu-card" data-category="pasta">
                     <img src="images/pasta.jpg" alt="Pasta">
                     <div class="menu-card-content">
                         <h3>Creamy Pasta</h3>

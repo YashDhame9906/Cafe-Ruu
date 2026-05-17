@@ -99,3 +99,76 @@ function showToast(message, type = 'success') {
         toast.className = 'toast';
     }, 3000);
 }
+
+// ===============================
+// SEARCH + FILTER FUNCTIONALITY
+// ===============================
+
+// Select elements
+const searchInput = document.getElementById('searchInput');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const menuCards = document.querySelectorAll('.menu-card');
+
+// Current selected filter
+let currentFilter = 'all';
+
+// Main function to update visible cards
+function filterMenu() {
+    // Get search text
+    const searchValue = searchInput
+        ? searchInput.value.toLowerCase().trim()
+        : '';
+
+    // Loop through all cards
+    menuCards.forEach(card => {
+        const category = card.dataset.category;
+        const title = card.querySelector('h3').textContent.toLowerCase();
+
+        // Check category match
+        const matchesCategory =
+            currentFilter === 'all' || category === currentFilter;
+
+        // Check search match
+        const matchesSearch = title.includes(searchValue);
+
+        // Show card only if both conditions are true
+        if (matchesCategory && matchesSearch) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// ===============================
+// SEARCH EVENT
+// ===============================
+if (searchInput) {
+    searchInput.addEventListener('input', filterMenu);
+}
+
+// ===============================
+// FILTER BUTTON EVENTS
+// ===============================
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn =>
+            btn.classList.remove('active')
+        );
+
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        // Save selected filter
+        currentFilter = button.dataset.filter;
+
+        // Update menu
+        filterMenu();
+    });
+});
+
+// ===============================
+// INITIAL CALL
+// ===============================
+filterMenu();

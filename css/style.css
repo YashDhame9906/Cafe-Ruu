@@ -738,3 +738,42 @@ footer {
 .toast.error {
     background: #dc3545;
 }
+/* =========================
+   SEARCH & FILTER
+========================= */
+.menu-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#searchInput {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 250px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #eee;
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
