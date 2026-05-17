@@ -101,37 +101,76 @@ function showToast(message, type = 'success') {
 }
 
 // ===============================
-// SEARCH + FILTER FUNCTIONALITY
+// ADD TO CART FUNCTIONALITY
 // ===============================
 
-// Select elements
+// Load cart from LocalStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Select all Add to Cart buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// Update cart count
+function updateCartCount() {
+    const cartCount = document.getElementById('cartCount');
+
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+// Save cart
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Add item to cart
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const item = {
+            name: this.dataset.name,
+            price: Number(this.dataset.price)
+        };
+
+        cart.push(item);
+        saveCart();
+
+        if (typeof showToast === 'function') {
+            showToast(`${item.name} added to cart!`);
+        } else {
+            alert(`${item.name} added to cart!`);
+        }
+    });
+});
+
+// Initialize cart count
+updateCartCount();
+
+
+// ===============================
+// SEARCH + FILTER FUNCTIONALITY
+// ===============================
 const searchInput = document.getElementById('searchInput');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const menuCards = document.querySelectorAll('.menu-card');
 
-// Current selected filter
 let currentFilter = 'all';
 
-// Main function to update visible cards
 function filterMenu() {
-    // Get search text
     const searchValue = searchInput
         ? searchInput.value.toLowerCase().trim()
         : '';
 
-    // Loop through all cards
     menuCards.forEach(card => {
         const category = card.dataset.category;
         const title = card.querySelector('h3').textContent.toLowerCase();
 
-        // Check category match
         const matchesCategory =
             currentFilter === 'all' || category === currentFilter;
 
-        // Check search match
         const matchesSearch = title.includes(searchValue);
 
-        // Show card only if both conditions are true
         if (matchesCategory && matchesSearch) {
             card.style.display = 'block';
         } else {
@@ -140,35 +179,24 @@ function filterMenu() {
     });
 }
 
-// ===============================
-// SEARCH EVENT
-// ===============================
+// Search input event
 if (searchInput) {
     searchInput.addEventListener('input', filterMenu);
 }
 
-// ===============================
-// FILTER BUTTON EVENTS
-// ===============================
+// Filter button events
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn =>
             btn.classList.remove('active')
         );
 
-        // Add active class to clicked button
         button.classList.add('active');
-
-        // Save selected filter
         currentFilter = button.dataset.filter;
 
-        // Update menu
         filterMenu();
     });
 });
 
-// ===============================
-// INITIAL CALL
-// ===============================
+// Initial filter call
 filterMenu();

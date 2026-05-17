@@ -1,28 +1,79 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu | FoodieHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Cart Icon -->
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+        </a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Delicious Menu</h1>
+            <p>Explore our most loved dishes.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu section">
+        <div class="container">
+
+            <p class="section-subtitle">Food Menu</p>
             <h2 class="section-title">Popular Categories</h2>
-            <link rel="stylesheet" href="css/style.css">
-               <button class="filter-btn" data-filter="burger">Burger</button>
-        <button class="filter-btn" data-filter="pasta">Pasta</button>
-    <!-- Search & Filter Bar -->
-<div class="menu-controls">
-    <input type="text" id="searchInput" placeholder="Search food...">
 
-    <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="pizza">Pizza</button>
-     </div>
-</div>
+            <!-- Search and Filter -->
+            <div class="menu-controls">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search food..."
+                >
 
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pizza">Pizza</button>
+                    <button class="filter-btn" data-filter="burger">Burger</button>
+                    <button class="filter-btn" data-filter="pasta">Pasta</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
             <div class="menu-grid">
 
                 <!-- Pizza -->
                 <div class="menu-card" data-category="pizza">
-                    <img src="images/pizza.jpg" alt="Pizza">
+                    <img src="images/pizza.jpg" alt="Margherita Pizza">
+
                     <div class="menu-card-content">
                         <h3>Margherita Pizza</h3>
                         <p>Classic cheese pizza with fresh basil.</p>
+
                         <div class="menu-footer">
                             <span>₹299</span>
+
                             <button
                                 class="btn btn-small add-to-cart"
                                 data-name="Margherita Pizza"
@@ -35,12 +86,15 @@
 
                 <!-- Burger -->
                 <div class="menu-card" data-category="burger">
-                    <img src="images/burger.jpg" alt="Burger">
+                    <img src="images/burger.jpg" alt="Cheese Burger">
+
                     <div class="menu-card-content">
                         <h3>Cheese Burger</h3>
                         <p>Juicy burger with cheddar cheese.</p>
+
                         <div class="menu-footer">
                             <span>₹249</span>
+
                             <button
                                 class="btn btn-small add-to-cart"
                                 data-name="Cheese Burger"
@@ -53,12 +107,15 @@
 
                 <!-- Pasta -->
                 <div class="menu-card" data-category="pasta">
-                    <img src="images/pasta.jpg" alt="Pasta">
+                    <img src="images/pasta.jpg" alt="Creamy Pasta">
+
                     <div class="menu-card-content">
                         <h3>Creamy Pasta</h3>
                         <p>Italian pasta in rich white sauce.</p>
+
                         <div class="menu-footer">
                             <span>₹349</span>
+
                             <button
                                 class="btn btn-small add-to-cart"
                                 data-name="Creamy Pasta"
@@ -73,8 +130,10 @@
         </div>
     </section>
 
+    <!-- Toast Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
-    <!-- Toast Notification Container -->
-<div id="toast" class="toast"></div>
 </body>
 </html>
