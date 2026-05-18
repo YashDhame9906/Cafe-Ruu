@@ -1,46 +1,44 @@
-// Load cart from LocalStorage
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+// ======================================
+// CHECKOUT PAGE FUNCTIONALITY
+// ======================================
 
+// Load cart from LocalStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Get required elements
 const checkoutTotal = document.getElementById('checkoutTotal');
 const checkoutForm = document.getElementById('checkoutForm');
 
-// Calculate total price
-let total = 0;
-cart.forEach(item => {
-    total += item.price;
-});
+// ======================================
+// CALCULATE TOTAL PRICE
+// ======================================
+function calculateTotal() {
+    let total = 0;
 
-// Display total
-if (checkoutTotal) {
-    checkoutTotal.textContent = total;
-}
-
-// Handle form submission
-if (checkoutForm) {
-    checkoutForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        if (cart.length === 0) {
-            showToast('Your cart is empty.', 'error');
-            return;
-        }
-
-        showToast('Your order has been placed successfully!');
-
-        // Clear cart after successful order
-        localStorage.removeItem('cart');
-
-        // Reset form
-        checkoutForm.reset();
-
-        // Redirect to homepage
-        window.location.href = 'index.html';
+    cart.forEach(item => {
+        // Supports both:
+        // 1. Separate entries for duplicate items
+        // 2. Single entry with quantity property
+        total += item.price * (item.quantity || 1);
     });
+
+    return total;
 }
 
-// ===============================
-// TOAST NOTIFICATION FUNCTION
-// ===============================
+// ======================================
+// DISPLAY TOTAL
+// ======================================
+function updateCheckoutTotal() {
+    const total = calculateTotal();
+
+    if (checkoutTotal) {
+        checkoutTotal.textContent = total;
+    }
+}
+
+// ======================================
+// TOAST NOTIFICATION
+// ======================================
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
 
@@ -53,3 +51,52 @@ function showToast(message, type = 'success') {
         toast.className = 'toast';
     }, 3000);
 }
+
+// ======================================
+// HANDLE FORM SUBMISSION
+// ======================================
+if (checkoutForm) {
+    checkoutForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Check if cart is empty
+        if (cart.length === 0) {
+            showToast('Your cart is empty.', 'error');
+            return;
+        }
+
+        // Collect customer details
+        const orderDetails = {
+            name: document.getElementById('name')?.value.trim(),
+            phone: document.getElementById('phone')?.value.trim(),
+            address: document.getElementById('address')?.value.trim(),
+            payment: document.getElementById('payment')?.value,
+            items: cart,
+            total: calculateTotal(),
+            orderDate: new Date().toLocaleString()
+        };
+
+        // Save latest order (optional)
+        localStorage.setItem('lastOrder', JSON.stringify(orderDetails));
+
+        // Show success toast
+        showToast('Your order has been placed successfully!');
+
+        // Clear cart
+        localStorage.removeItem('cart');
+        cart = [];
+
+        // Reset form
+        checkoutForm.reset();
+
+        // Redirect to home page after 3 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    });
+}
+
+// ======================================
+// INITIALIZE PAGE
+// ======================================
+updateCheckoutTotal();
