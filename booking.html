@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table | FoodieHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Booking Page CSS -->
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">FoodieHub</a>
+
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="cart.html">Cart</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="container">
+            <span class="booking-badge">Reserve Your Experience</span>
+            <h1>Book a Table</h1>
+            <p>
+                Enjoy a memorable dining experience with handcrafted dishes,
+                cozy ambience, and exceptional service.
+            </p>
+        </div>
+    </section>
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-wrapper">
+                <!-- Left Info Panel -->
+                <div class="booking-info">
+                    <h2>Why Reserve With Us?</h2>
+                    <p>
+                        Whether it's a family dinner, date night, or celebration,
+                        we make every meal special.
+                    </p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fa-solid fa-utensils"></i>
+                            <div>
+                                <h4>Premium Dining</h4>
+                                <p>Fresh ingredients and chef-crafted dishes.</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Mon - Sun: 11:00 AM to 11:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Pimpri-Chinchwad, Pune</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Booking Form -->
+                <div class="booking-form-card">
+                    <h2>Table Reservation</h2>
+                    <p class="form-subtitle">
+                        Fill in your details and we will confirm your booking.
+                    </p>
+
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <input type="time" id="time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" required>
+                                <option value="">Select Guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7+">7+ Guests</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn booking-btn">
+                            Book Table
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

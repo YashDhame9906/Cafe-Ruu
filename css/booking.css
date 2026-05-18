@@ -1,0 +1,225 @@
+/* =========================
+   BOOKING HERO
+========================= */
+.booking-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('../images/booking-banner.jpg') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 120px 20px 100px;
+}
+
+.booking-badge {
+    display: inline-block;
+    background: rgba(255, 183, 3, 0.15);
+    color: #ffb703;
+    border: 1px solid rgba(255, 183, 3, 0.4);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.booking-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+
+.booking-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+/* =========================
+   BOOKING SECTION
+========================= */
+.booking-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.booking-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+/* =========================
+   INFO PANEL
+========================= */
+.booking-info {
+    background: linear-gradient(135deg, #1d1d1d, #2c2c2c);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.booking-info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.booking-info > p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.info-item i {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(230, 57, 70, 0.15);
+    color: #e63946;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.info-item h4 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+/* =========================
+   FORM CARD
+========================= */
+.booking-form-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.booking-form-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.08);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.booking-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e63946, #d62839);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.25);
+}
+/* =========================
+   TOAST
+========================= */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.3s;
+    z-index: 9999;
+}
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast.error {
+    background: #e63946;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .booking-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-hero {
+        padding: 90px 20px 70px;
+    }
+
+    .booking-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .booking-info,
+    .booking-form-card {
+        padding: 25px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
