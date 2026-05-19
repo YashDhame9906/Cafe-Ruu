@@ -39,10 +39,8 @@ function updateCheckoutTotal() {
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
 
-    if (!toast) {
-        alert(message);
-        return;
-    }
+    // If toast element is missing, do nothing
+    if (!toast) return;
 
     toast.textContent = message;
     toast.className = `toast show ${type}`;
