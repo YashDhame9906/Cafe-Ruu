@@ -159,6 +159,7 @@ The project uses browser LocalStorage to store:
 ---
 
 ##  Screenshots
+<img width="1897" height="1027" alt="image" src="https://github.com/user-attachments/assets/613f98c7-2ca3-4e64-bb73-402bd1a31a04" />
 
 
 
