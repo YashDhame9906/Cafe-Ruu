@@ -142,8 +142,8 @@ if (checkoutForm) {
 
             // Redirect to home page after 3 seconds
             setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 3000);
+                window.location.href = 'success.html';
+            }, 1500);
 
         } catch (error) {
             console.error('EmailJS Error:', error);
