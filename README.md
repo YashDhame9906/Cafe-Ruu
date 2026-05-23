@@ -11,6 +11,7 @@ Cafe-Ruu is a modern and responsive restaurant website where users can:
 - Update item quantities
 - Complete checkout
 - Receive order confirmation emails
+- Receive Table Booking confirmation message on whatapp
 - View order success page
 
 This project is built using **HTML, CSS, JavaScript**, and **EmailJS**.
