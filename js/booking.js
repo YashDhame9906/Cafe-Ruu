@@ -13,7 +13,7 @@ bookingForm.addEventListener("submit", function (e) {
 
     // Cafe WhatsApp Number
     // Replace with your WhatsApp number
-    const cafeNumber = "919561516378";
+    const cafeNumber = "9195xxxxxx78";
 
     // WhatsApp Message
     const message = ` *New Table Booking* %0A%0A
